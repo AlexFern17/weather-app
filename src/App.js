@@ -1,15 +1,17 @@
 import "./App.css";
+import Weather from "./Weather";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <p>Weather App</p>
-      <footer className="App-footer">
-        This application was coded by Alejandra Fernandez and is open sourced on
-        Github.
-      </footer>
+      <div className="container">
+        <h1>Weather App</h1>
+        <Weather />
+        <footer className="App-footer">
+          This application was coded by Alejandra Fernandez and is open sourced
+          on Github.
+        </footer>
+      </div>
     </div>
   );
 }
-
-export default App;
