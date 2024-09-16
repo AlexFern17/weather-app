@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
+import FormattedDate from "./FormattedDate.js";
 
 export default function Weather() {
   const [ready, setReady] = useState(false);
   const [weatherData, setWeatherData] = useState({});
 
   function handleResponse(response) {
-    console.log(response.data);
     setWeatherData({
       city: response.data.city,
       feels_like: response.data.temperature.feels_like,
@@ -16,6 +16,7 @@ export default function Weather() {
       humidity: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       icon: response.data.condition.icon_url,
+      time: new Date(response.data.time * 1000),
     });
     setReady(true);
   }
@@ -35,24 +36,26 @@ export default function Weather() {
             </div>
             <div className="col-3 btn btn-secondary">Search</div>
           </div>
-          <div className="row mt-3">
+          <div className="row">
             <div className="col-4 degrees">
-              <img src={weatherData.icon} />
+              <img src={weatherData.icon} className="mt-3" />
               {Math.round(weatherData.temperature)}
-              <span className="unit align-middle">°C</span>
+              <span className="unit align-text-top">°C</span>
             </div>
             <div className="col-5">
-              <ul className="dataColumnOne">
+              <ul className="dataColumnOne mt-3">
                 <li>Feels Like: {Math.round(weatherData.feels_like)}°C</li>
                 <li>Humidity: {weatherData.humidity}%</li>
                 <li>Wind: {weatherData.wind} km/h</li>
               </ul>
             </div>
             <div className="col-3">
-              <ul className="dataColumnTwo">
+              <ul className="dataColumnTwo mt-3">
                 <li className="cityName">{weatherData.city}</li>
-                <li>Sun 1:00 PM</li>
-                <li>{weatherData.condition}</li>
+                <li>
+                  <FormattedDate date={weatherData.time} />
+                </li>
+                <li className="text-capitalize">{weatherData.condition}</li>
               </ul>
             </div>
           </div>
