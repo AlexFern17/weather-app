@@ -1,14 +1,14 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
+import WeatherMetric from "./WeatherMetric";
 
 export default function WeatherInfo(props) {
   return (
     <div className="weatherInfoContainer">
       <div className="row">
         <div className="col-4 degrees">
-          <img src={props.data.icon} className="mt-3" alt="" />
-          {Math.round(props.data.temperature)}
-          <span className="unit align-text-top">°C</span>
+          <img src={props.data.icon} className="mt-3" alt="weather-icon" />
+          <WeatherMetric celsius={Math.round(props.data.temperature)} />
         </div>
         <div className="col-5">
           <ul className="dataColumnOne mt-3">
