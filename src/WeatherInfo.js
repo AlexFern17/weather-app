@@ -3,18 +3,7 @@ import FormattedDate from "./FormattedDate";
 
 export default function WeatherInfo(props) {
   return (
-    <div className="weatherContainer">
-      <div className="row">
-        <div className="col-9">
-          <input
-            className="form-control form-control-lg"
-            type="text"
-            placeholder="Enter a city"
-            label="searchBox"
-          />
-        </div>
-        <div className="col-3 btn btn-secondary">Search</div>
-      </div>
+    <div className="weatherInfoContainer">
       <div className="row">
         <div className="col-4 degrees">
           <img src={props.data.icon} className="mt-3" alt="" />

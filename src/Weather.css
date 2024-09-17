@@ -3,6 +3,11 @@
   border: solid 1px #303134;
   padding: 16px;
 }
+.weatherInfoContainer {
+  background-color: #dbdde0;
+  border: none;
+  padding: 16px;
+}
 .degrees {
   font-size: 42px;
   text-align: center;
