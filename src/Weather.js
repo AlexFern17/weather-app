@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
-import FormattedDate from "./FormattedDate.js";
 import WeatherInfo from "./WeatherInfo.js";
 
 export default function Weather(props) {
