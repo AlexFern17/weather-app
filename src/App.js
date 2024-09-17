@@ -9,7 +9,7 @@ export default function App() {
         <Weather defaultCity="New York" />
         <footer className="App-footer">
           This application was coded by Alejandra Fernandez and is open sourced
-          on Github.
+          on <a href="https://github.com/AlexFern17/weather-app">Github</a>.
         </footer>
       </div>
     </div>
