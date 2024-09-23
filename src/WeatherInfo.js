@@ -6,7 +6,7 @@ export default function WeatherInfo(props) {
   return (
     <div className="weatherInfoContainer">
       <div className="row">
-        <div className="col-4 degrees">
+        <div className="col-4">
           <img src={props.data.icon} className="mt-3" alt="weather-icon" />
           <WeatherMetric celsius={Math.round(props.data.temperature)} />
         </div>
