@@ -26,7 +26,7 @@ export default function WeatherMetric(props) {
       </span>
     );
   } else {
-    let fahrenheit = (props.celsius * 9) / 5 + 32;
+    let fahrenheit = Math.round((props.celsius * 9) / 5 + 32);
     return (
       <span className="degrees">
         <span className="temperature">{fahrenheit}</span>
